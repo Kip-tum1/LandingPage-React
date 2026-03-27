@@ -5,7 +5,6 @@ function Contact(){
       <h2 class="section-title">Contact Me</h2>
 
       <div class="contact-content">
-         {/* Left - Info */}
         <div class="contact-info">
           <h3 class="info-title">Let's Get In Touch</h3>
           <p class="info-text">
@@ -28,36 +27,22 @@ function Contact(){
           </div>
         </div>
 
-         {/* Right - Form --> */}
+         
         <div class="contact-form-wrapper">
           <form class="contact-form">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                placeholder="Enter Your Name" 
-                required
-              />
+              <input type="text" id="name" placeholder="Enter Your Name" required />
             </div>
 
             <div class="form-group">
               <label for="email">Email <span class="required">*</span></label>
-              <input 
-                type="email" 
-                id="email" 
-                placeholder="Enter Your Email" 
-                required
-              />
+              <input type="email" id="email" placeholder="Enter Your Email" required />
             </div>
 
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea 
-                id="message" 
-                rows="5" 
-                placeholder="Enter Your Message"
-              ></textarea>
+              <textarea id="message" rows="5" placeholder="Enter Your Message"></textarea>
             </div>
 
             <div class="form-submit">

@@ -4,12 +4,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <nav style={{
-        backgroundColor: '#f4f3f2',
-        paddingLeft: '1rem',
-        paddingRight: '1rem',
-      }} className="md-nav-padding">
+    <div>
+      <nav style={{ backgroundColor: '#f4f3f2',paddingLeft: '1rem', paddingRight: '1rem',}} className="md-nav-padding">
         <div style={{
           maxWidth: '1400px',           // reasonable container max-width
           margin: '0 auto',
@@ -78,12 +74,7 @@ const NavBar = () => {
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-            style={{
+          <button type="button"onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"}  aria-expanded={isOpen}  style={{
               backgroundColor: 'white',
               padding: '4px',
               borderRadius: '4px',
@@ -92,16 +83,7 @@ const NavBar = () => {
             }}
             className="mobile-toggle"
           >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#1f2937"           // gray-800
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1f2937"  strokeWidth="2"  strokeLinecap="round" strokeLinejoin="round" >
               <path d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
@@ -109,105 +91,26 @@ const NavBar = () => {
       </nav>
 
       {/* Mobile menu dropdown */}
-      <div style={{
-        overflow: 'hidden',
-        transition: 'all 0.3s ease-in-out',
-        maxHeight: isOpen ? '24rem' : '0',   // max-h-96 ≈ 24rem
-        paddingTop: isOpen ? '1rem' : '0',
-        paddingBottom: isOpen ? '1rem' : '0',
-        backgroundColor: '#1f2937',          // gray-800
-      }} className="mobile-menu">
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem',                      // space-y-4
-          paddingLeft: '1.5rem',
-          paddingRight: '1.5rem',
-          textAlign: 'center',
-          color: 'white',
-        }}>
-          <a href="#home" style={{
-            color: 'inherit',
-            textDecoration: 'none',
-            transition: 'color 0.2s',
-          }} onClick={() => setIsOpen(false)} className="mobile-link">
+      <div style={{overflow: 'hidden', transition: 'all 0.3s ease-in-out', maxHeight: isOpen ? '24rem' : '0',   paddingTop: isOpen ? '1rem' : '0', paddingBottom: isOpen ? '1rem' : '0',backgroundColor: '#1f2937', }} className="mobile-menu">
+        <div style={{display: 'flex', flexDirection: 'column', gap: '1rem',  paddingLeft: '1.5rem',paddingRight: '1.5rem',textAlign: 'center',color: 'white',}}>
+          <a href="#home" style={{color: 'inherit',textDecoration: 'none', transition: 'color 0.2s',}} onClick={() => setIsOpen(false)} className="mobile-link">
             Home
           </a>
-          <a href="#about" style={{
-            color: 'inherit',
-            textDecoration: 'none',
-            transition: 'color 0.2s',
-          }} onClick={() => setIsOpen(false)} className="mobile-link">
+          <a href="#about" style={{color: 'inherit',textDecoration: 'none',transition: 'color 0.2s',}} onClick={() => setIsOpen(false)} className="mobile-link">
             About Me
           </a>
-          <a href="#service" style={{
-            color: 'inherit',
-            textDecoration: 'none',
-            transition: 'color 0.2s',
-          }} onClick={() => setIsOpen(false)} className="mobile-link">
+          <a href="#service" style={{color: 'inherit',textDecoration: 'none',transition: 'color 0.2s',}} onClick={() => setIsOpen(false)} className="mobile-link">
             Services
           </a>
-          <a href="#projects" style={{
-            color: 'inherit',
-            textDecoration: 'none',
-            transition: 'color 0.2s',
-          }} onClick={() => setIsOpen(false)} className="mobile-link">
+          <a href="#projects" style={{color: 'inherit',textDecoration: 'none',transition: 'color 0.2s',}} onClick={() => setIsOpen(false)} className="mobile-link">
             Projects
           </a>
-          <a href="#contact" style={{
-            backgroundColor: 'white',
-            color: 'black',
-            padding: '0.75rem 1.5rem',
-            borderRadius: '9999px',         // rounded-full
-            textDecoration: 'none',
-            transition: 'transform 0.3s',
-            transform: 'scale(1)',
-            width: 'fit-content',
-            margin: '0 auto',
-          }} onClick={() => setIsOpen(false)} className="mobile-contact">
+          <a href="#contact" style={{backgroundColor: 'white',color: 'black',padding: '0.75rem 1.5rem',borderRadius: '9999px', textDecoration: 'none',transition: 'transform 0.3s',transform: 'scale(1)',width: 'fit-content', margin: '0 auto',}} onClick={() => setIsOpen(false)} className="mobile-contact">
             Contact Me
           </a>
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 768px) {
-          .md-nav-padding {
-            padding-left: 4rem !important;
-            padding-right: 6rem !important;
-          }
-          .desktop-menu {
-            display: flex !important;
-            align-items: center !important;
-          }
-          .mobile-toggle,
-          .mobile-menu {
-            display: none !important;
-          }
-          .nav-link:hover {
-            color: #d1d5db !important;      /* gray-300 */
-          }
-          .contact-btn:hover {
-            background-color: #1f2937 !important;  /* gray-800 */
-            color: #e5e7eb !important;            /* gray-200 */
-            transform: scale(1.05) !important;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .mobile-toggle:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px #3b82f6;
-          }
-          .mobile-link:hover {
-            color: #d1d5db !important;      /* gray-300 */
-          }
-          .mobile-contact:hover {
-            transform: scale(1.05);
-          }
-        }
-      `}</style>
-    </>
+    </div>
   );
 };
 

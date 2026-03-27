@@ -20,7 +20,7 @@ body {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-/* Home page */
+
 .home{
     padding-top: 70px;
     text-align: center;
@@ -47,7 +47,6 @@ button{
     cursor: pointer;
 }
 
-/* About Page */
 
 .about{
     display: flex;
@@ -57,14 +56,14 @@ button{
 .button{
     margin: 10px 0;
 }
-/* Footer */
+
 .footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: black;
 }
-/* Contact */
+
 .contact-section {
   background-color: #f4f3f2;
   padding: 5rem 0;
@@ -79,9 +78,6 @@ button{
   margin-bottom: 3rem;
 }
 
-/* ============================================
-   Two-column layout
-============================================ */
 .contact-content {
   display: flex;
   flex-direction: column;
@@ -101,7 +97,7 @@ button{
   width: 100%;
 }
 
-/* Left - Info */
+
 .info-title {
   font-size: 1.875rem;
   font-weight: 700;
@@ -127,7 +123,6 @@ button{
   color: #000;
 }
 
-/* Right - Form */
 .contact-form-wrapper {
   background-color: #9aafc9;
   padding: 2rem 1.5rem;
@@ -202,9 +197,6 @@ button{
   transform: translateY(0);
 }
 
-/* ============================================
-   Responsive fine-tuning
-============================================ */
 @media (max-width: 767px) {
   .contact-form-wrapper {
     padding: 1.5rem 1rem;
@@ -216,5 +208,37 @@ button{
 
   .info-title {
     font-size: 1.6rem;
+  }
+  .mobile-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6;
+  }
+  .mobile-link:hover {
+    color: #d1d5db !important;      
+  }
+  .mobile-contact:hover {
+    transform: scale(1.05);
+  }
+  
+}
+@media (min-width: 768px) {
+  .md-nav-padding {
+    padding-left: 4rem !important;
+    padding-right: 6rem !important;
+  }
+  .desktop-menu {
+    display: flex !important;
+    align-items: center !important;
+  }
+  .mobile-toggle,.mobile-menu {
+    display: none !important;
+  }
+  .nav-link:hover {
+    color: #d1d5db !important;      
+  }
+  .contact-btn:hover {
+    background-color: #1f2937 !important;  
+    color: #e5e7eb !important;            
+    transform: scale(1.05) !important;
   }
 }

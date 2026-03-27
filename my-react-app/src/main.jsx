@@ -1,10 +1,14 @@
-import {BrowserRoute} from "react-router-dom"
+// ✅ Correct React 18 pattern
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRoute>
-    <App />
-  </BrowserRoute>,
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 )

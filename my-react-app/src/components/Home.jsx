@@ -1,5 +1,4 @@
 
-import "../css/Home.css"
 
 function Home() {
   return (
